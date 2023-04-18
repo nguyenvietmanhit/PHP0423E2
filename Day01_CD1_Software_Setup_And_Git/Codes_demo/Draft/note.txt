@@ -1,0 +1,28 @@
+1 - Cấu trúc ngày học:
+Day01/
+     /Bai_tap_ve_nha
+     /Code_demo / 
+     /Slides:
+-> nên tổ chức thư mục giống như trên với cá nhân
+2 - Thời gian học ?
+18h30 T2/6
+3 - Kỹ năng viết CV
++ Sơ yếu lý lịch:  file .pdf, nên tham khảo mẫu
+CV có sẵn
++ Làm sao để CV tới đc HR - Human Resource?
+- Thụ động: bật chế độ tìm việc online trên các trang CV online
+- Chủ động hơn: chủ động tìm các job để nộp CV: join các group facebook/insta .... về lập trình
++ Chưa có kinh nghiệm thì viết CV ntn ?
+
+4 - Kinh nghiệm trả lời phỏng vấn:
++ Ăn mặc chỉnh tề
++ Đến sớm trc 5p
++ Bạn biết gì về cty tôi? search
++ Tại sao bạn chọn cty tôi?
++ Bạn mong muốn mức lương ntn ? chưa có kinh nghiệm chưa nên
+đề cập lương
+Có kinh nghiệm phải chủ động đề xuất mức lương, ko nên để cty tự quyết định
+- Câu hỏi chuyên môn:
++ Tích lũy kiến thức cơ bản
++ Đi pv nhiều    
++ Khi ko biết thì nên trả lời là ko biết, nhưng em sẽ tìm hiểu thêm                                
