@@ -1,0 +1,34 @@
+1 - Hướng dẫn viết CV/Hồ sơ xin việc
++ Sau khi học cơ bản về nền tảng của ngôn
+ngữ lập trình thì có thể làm CV đc
++ Nên tham khảo mẫu CV trên mạng, file CV 
+ở dạng .pdf khi gửi cho tuyển dụng
++ Nội dung trong CV cần chú ý nhất vào Kinh
+nghiệm làm việc và Kỹ năng cơ bản
+- Kn làm việc: với beginner thì tập trung vào
+đồ án cuối khóa/bài tập lớn
+hoặc project đã làm
+VD: Web bán hàng:
+Công nghệ: PHP , MySQL, HTML, CSS, Javascript
+Vị trí: Dev + Test
+Chức năng đã thực hiện: Login/Register, giỏ
+hàng ....
+Teamsize: 5
+Quản lý source code: git
+
+2 - Làm thế nào để CV tới đc HR nhanh nhất?
++ Cách thụ động: lên trang tìm việc, tạo CV
+online và để đó, chờ HR -> ko ưu tiên với
+fresher
++ Cách chủ động: Chủ động lên các trang tìm
+việc để gửi CV -> lâu có phản hồi
+Tham gia các group trên mạng xã hội về lập
+trình -> chủ động inbox cho HR
+
+3 - Kinh nghiệm phỏng vấn:
++ Tác phong: lịch sự, ko đến muộn
++ Trả lời câu hỏi pv: cần tìm hiểu về cty trc -> search gg
+Cần search gg một số câu hỏi pv cơ bản về
+lập trình
++ Deal lương: nên đưa ra 1 mức lượng cụ thể
+phù hợp với vị trí hiện tại
