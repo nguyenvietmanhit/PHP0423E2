@@ -1,0 +1,43 @@
+git.txt
+- Ngoại ngữ: tiếng Anh, nên có kỹ năng đọc dịch trước
+Tool: Extension Chrome: Google Translate và Laban
+
+- Git là gì?
+LÀ công cụ giúp quản lý source code và code teamwork
+
+- Một số thao tác cơ bản với git: UI , Command Line
+theme
+
+D: -> chuyển ổ
+cd \ -> di chuyển về ổ gốc - change directory
+mkdir php1222e_git -> tạo thư mục - make directory
+echo manhnv content > manhnv.txt -> tạo file
+cat manhnv.txt -> đọc nội dung file
+
+2 - Tạo repository trên github để lưu trữ source code 
+sẽ đẩy lên từ local:
+git init -> khởi tạo git
+git remote add origin https://github.com/nguyenvietmanhit/php1222e_git.git -> gắn link repo vào local
+git remote -v -> check các link repo 
+git status -> ktra trạng thái các file/thư mục
+git add manhnv.txt -> thêm file để git theo dõi
+git commit -m "manhnv first commit" -> cam kết lại các
+thay đổi vừa git add
+
+- quy tắc 3 bước để đẩy code:
+git add
+git commit
+git push
+
+- LẤy source code từ git của người khác về máy:
+ git clone https://github.com/nguyenvietmanhit/php1222e_skda.git
+
+ 2 - Code teamwork với Git
+ Bài toán: Lớp PHP1222E là 1 team code, manhnv là PM, còn
+ lại là dev
+ + PM khởi code cho dự án ở dạng private
+ + PM add thủ công các member vào dự án: SEttings -> 
+ Collaborator -> Add people
+ + Các member sau khi đc add cần vào email để accept invite để đc join vào dự án
+ + Member cần clone source về trước, r cd vào thư mục đó
+ 
