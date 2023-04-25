@@ -1,0 +1,175 @@
+js_basic.html
+Chuyên đề 2: Kiến thức nền tảng của ngôn
+ngữ lập trình
+- Giúp làm quen với các kiến thức, khái niệm nền tảng của 1 ngôn ngữ lập trình bất kỳ: biến, hằng, hàm
+- Sử dụng ngôn ngữ lập trình Javascript để demo
+Javascript Khác Java
+- JS ra đời từ năm 199x, chạy trên Web
+- Học JS theo 2 hướng:
++ Làm quen với ngôn ngữ lập trình
++ Thiết kế Web
+
+<script>
+	// 1 - Comment: ko hiển thị lên trình duyệt, có tác // dụng giải thích code
+	// Comment 2
+	// Ctrl /    -> phím tắt comment
+
+	// alert('Hello JS');
+	// 2 - Biến: lưu trữ giá trị, giá trị này có thể // thay đổi bất cứ lúc nào
+	// + Cú pháp khai báo biến: var let const
+	var fullname = 'manhnv';
+	var age = 33;
+	var address = 'Hoài Đức, Hà Nội';
+	// + Quy tắc đặt tên biến:
+	// - Tên biến phải bắt đầu bằng chữ hoặc _
+	// var 1name = 'manhnv';
+	// - Tên biến ko đc chứa ký tự đặc biệt, trừ _
+	// var nam%e = 'manhnv';
+	// - Tên biến ko đc trùng với từ khóa có sẵn của
+	// ngôn ngữ đó
+	// var var = 'manhnv';
+	// - Tên biến trong JS là phân biệt hoa thường
+	var name = 'manhnv';
+	var namE = 'manhnv';
+	// - Quy tắc đặt tên biến khi có nhiều từ:
+	var nameofclass = 'php0423e2'; // ko nên
+	var name_of_class = 'php0423e2'; //snake
+	var x = 5; //ko nên đặt vì ko có ý nghĩa
+	var number = 5;
+
+	// VD:
+	var fullname = 'manhnv';
+	var age = 33;
+	var address = 'HN';
+	document.write('Tên của bạn: ' + fullname);
+	document.write('<br>'); 
+	document.write('Tuổi của bạn: ' + age);
+	document.write('<br>');
+	document.write('Địa chỉ: ' + address);
+	// 3 - Hằng
+	// + Là biến tuy nhiên ko thể gán lại giá trị 
+	// khác cho hằng, tên hằng nên viết hoa
+	const PI = 3.14;
+	// PI = 1; // lỗi
+	// 4 - Kiểu dữ liệu: phân loại 1 dữ liệu cụ thể
+	// + number: lưu các giá trị là số: số nguyên,
+	//số thực
+	var age = 33;
+	var number1 = 1.23;
+	var number2 = -33;
+	// Hàm debug: hiển thị thông tin để giúp cho việc
+	//fixbug về sau
+	console.log(typeof number2); //number
+	// + string: lưu 1 chuỗi, giá trị của chuỗi sẽ đc bao bởi dấu nháy đơn ' hoăc nháy kép "
+	var str1 = 'Chuỗi 1';
+	var str2 = "Chuỗi 2";
+	var test = "123";
+	var str3 = "Chào bạn 'manhnv' ";//Chào bạn 'manhnv'
+	console.log(typeof str3); //string
+	// Cú pháp nối chuỗi: +
+	var str4 = str1 + str2;
+	// + boolean: lưu giá trị đúng sai, chỉ có 2 giá trị duy nhất là true hoặc false
+	var is_male = true;
+	var is_female = false;
+	// true false trong JS phải đc viết thường hết
+	// var is_test = True; //sai cú pháp
+	// + undefined: xảy ra khi khai báo biến mà ko gán // giá trị -> cần tránh
+	var name;
+	console.log(typeof name); //undefined
+	// + array: kiểu mảng, lưu trữ nhiều giá trị tại 1 thời điểm, và các giá trị này có thể là bất cứ kiểu dữ liệu nào, kể cả mảng
+	var names = ['a', 'b', 'c', 'd'];
+	var tests = [123, 'abc', true, undefined, []];
+	// + object: kiểu đối tượng. bao gồm thuộc tính và phương thức
+	var person = {
+		name: 'manhnv',
+		age: 33,
+		run: function() {
+			console.log('running');
+		}
+	};
+// Kiểu dữ liệu nguyên thủy: number, string, boolean là các kiểu dữ liệu ko có cấu trúc, có thể tính toán đc
+
+	// 5 - Hàm
+	// + Là tập các dòng code để xử lý logic nào đó
+	// + Chức năng quan trọng nhất của hàm: sử dụng lại
+	// Nếu 1 chức năng mà đc sử dụng từ 2 lần trở lên thì mới viết hàm
+	// Bài toán cộng 2 số:
+	var number1 = 2;
+	var number2 = 3;
+	var sum1 = number1 - number2; //
+	console.log(sum1); //5
+
+	var number1 = 3;
+	var number2 = 4;
+	var sum1 = number1 - number2; //
+	console.log(sum1); //7
+
+	var number1 = 4;
+	var number2 = 5;
+	var sum1 = number1 - number2; //
+	console.log(sum1); //9
+	// + Có 2 dạng hàm:
+	// - Hàm có sẵn bởi ngôn ngữ lập trình
+	// - Hàm tự định nghĩa:
+	// + Cú pháp:
+	function show() {
+		console.log('Hàm show');
+	}
+	// Cần gọi hàm để hàm đc thực thi
+	show();
+	// Quy tắc đặt tên hàm khi hàm gồm nhiều từ
+	// getMyFullname -> camel
+	// - Các loại hàm tự định nghĩa: 3 loại
+	// + Hàm ko có tham số, ko có giá trị trả về:
+	// function test() {
+	// 	console.log('Hàm test');
+	// }
+	// test();
+	// + Hàm có tham số, ko có giá trị trả về
+	// VD: viết hàm tính tổng 2 số
+	// Xác định tham số của hàm nếu có: tham số là biến ko mang giá trị cụ thể nào, dựa vào bài toán để xđ tham số
+	function sumNumber(number1, number2) {
+		var sum = number1 + number2;
+		console.log('Tổng = ' + sum);
+	}
+	// Gọi hàm là lúc truyền giá trị cụ thể cho tham số của hàm
+	sumNumber(2, 5); //Tổng = 7
+	// VD: Viết hàm hiển thị tên của người bất kỳ
+	// Xđ tham số: 1 tham số
+	function showName(fullname) {
+		console.log('Tên của bạn: ' + fullname);
+	}
+	showName('manhnv');
+	showName('abc');
+	// + Hàm có tham số, có giá trị trả về:
+	// VD: Viết hàm tính tổng 2 số:
+	// Xđ tham số:  2 tham số
+	// Xđ giá trị trả về: là kiểu dữ liệu mong muốn 
+	// trả về của hàm: number
+	function sumNumber2(num1, num2) {
+		var sum = num1 + num2;
+		return sum;
+	}
+	// Hàm có giá trị trả về thì khi gọi hàm thì sẽ tương đương với 1 giá trị cụ thể
+	var s1 = sumNumber2(1,2); 
+	console.log(s1); //3
+	var s2 = s1 + 4;
+	var s3 = s1 - 5;
+	// Hàm có giá trị trả về giúp linh hoạt khi xử lý kết quả trả về từ việc gọi hàm
+	// VD: Viết hàm hiển thị tên của ai đó
+	// Xđ tham số: 1 tham số
+	// Xđ giá trị trả về: string
+	function showFullname1(fullname) {
+		var result = "Tên của bạn: " + fullname;
+		// Từ khóa return bên trong hàm có 2 đặc điểm:
+		// - Làm cho hàm có giá trị trả về
+		// - Kết thúc hàm, các code phía sau return ko bao giờ đc thực thi
+		return result;
+		console.log('text test');
+	} 
+	var res1 = showFullname1('abc');
+	console.log(res1); 
+	// -> nên viết hàm theo hướng có tham số và có giá trị trả về
+</script>
+
+
