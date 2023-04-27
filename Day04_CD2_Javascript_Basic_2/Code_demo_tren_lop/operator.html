@@ -1,0 +1,84 @@
+operator.html
+Toán tử trong lập trình
+- Là các ký hiệu giúp tính toán các biểu thức
+3 + 2 = 5 => số 2 và 3 là số hạng/toán hạng, + là 
+toán tử
+<script>
+	// 1 - Toán tử số học: tính toán các số, kết quả trả về là number
+	var number1 = 5;
+	var number2 = 2;
+	// Phép cộng: +
+	var res1 = number1 + number2; //7
+	// Phép trừ: -
+	var res2 = number1 - number2; //3
+	// Phép nhân: *
+	var res3 = number1 * number2; //10
+	// Phép chia: /
+	var res4 = number1 / number2; //2.5
+	// Phép chia lấy dư: %
+	var res5 = number1 % number2; //1
+	// Tăng giảm tích lũy: ++ --, tăng / giảm 1 đơn vị
+	var number = 5;
+	++number;
+	// Nếu ++ --  đứng trước biến sẽ thay đổi trước, và ngược lại
+	console.log(number); //6
+
+	var num = 3;
+	var result = num++ - num--;
+	//         =   3   -  4
+	 // -1 2 0 1 
+
+	var x = 5;
+	var test = x++ - 2 + ++x;
+	//       =  5  - 2 +  7
+	// 8 9 10
+	var x = 2;
+	var sum = x * x - --x * 2 + x++ - x + ++x;
+	//      = 2 * 2 -  1  * 2 +  1  - 2 +  3
+	// 4 5 
+	// 2 - Toán tử so sánh: so sánh các biểu thức và trả về boolean
+	// Lớn hơn:  >
+	var test1 = 3 > 2; //true
+	// Lớn hơn hoặc bằng: >=
+	var test2 = 2 >= 2; //true
+	// Nhỏ hơn: <
+	// Nhỏ hơn hoặc bằng: <=
+	// So sánh bằng: == ===
+	// So sánh == chỉ so sánh về giá trị
+	var test3 = (1 == 2); //false
+	// So sánh === so sánh về cả giá trị và kiểu dữ liệu
+	var test4 = (1 == '1'); //true
+	var test5 = (1 === '1');//false
+	// So sánh khác: !=
+	var test6 = (2 != 1); //true
+	// 3 - Toán tử logic: kết hợp nhiều biểu thức so sánh , kqua trả về boolean
+	// + && : and
+	// true && true = true
+	// true && false = false
+	// false && true = false
+	// false && false = false
+	var test1 = (3 > 0) && (3 >= 3); //true && true = true
+	// + || : or
+	// true || true = true
+	// true || false = true
+	// false || true = true
+	// false || false = false
+	var test = (1 < 1) || (2 < 2); //false
+	// + !: not
+	// !true = false
+	// !false = true
+	var test3 = !(1 > 0); //false
+	// 4 - Toán tử gán:
+	// = phép gán
+	var x = 5;
+	// Cộng tích lũy +=
+	x += 3; // x = x + 3 = 8
+	// Trừ tích lũy -=
+	x -= 2; // x = x - 2 = 6
+	// Nhân tích lũy *=
+	x *= 3; // x = x * 3 = 18
+	// Chia tích lũy /=
+	x /= 2; // x = x / 2 = 9
+	// Chia lấy dư tích lũy %=
+	x %= 3; // x = x % 3 = 0
+</script>

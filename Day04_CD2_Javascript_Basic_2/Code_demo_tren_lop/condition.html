@@ -1,0 +1,60 @@
+condition.html
+- Câu lệnh điều kiện:  là biểu thức logic để quyết định sẽ đi theo hướng nào (đúng/sai)
++ If elseif, else
++ switch case
+<script>
+	// 1 - Câu lệnh điều kiện họ if
+	// + If: sử dụng cho 1 trường hợp duy nhất là nếu điều kiện đúng thì thực thi
+	var number = 5;
+	if (number % 2 == 1) {
+		console.log('Là số lẻ');
+	}
+	// + If else: xử lý 2 trường hợp biểu thức điều kiện đúng hoặc sai
+	if (4 % 2 == 1) {
+		console.log('đúng');
+	} else {
+		console.log('sai');
+	}
+	// Toán tử điều kiện: là sự thay thế về cú pháp cho if else khi logic đơn giản
+	var day = '';
+	if (2 > 0) {
+		day = 'đúng';
+	} else {
+		day = 'sai';
+	}
+	var day = (2 > 0) ? 'đúng' : 'sai';
+	// + If elseif: xử lý từ 3 trường hợp trở lên
+	//VD: phân loại học lực: giỏi, khá, tb, yếu
+	var score = 11;
+	if (score >= 8 && score <= 10) {
+		console.log('giỏi');
+	} else if (score >= 6.5 && score < 8) {
+		console.log('khá');
+	} else if (score >= 5 && score < 6.5) {
+		console.log('tb');
+	} else {
+		console.log('yếu');
+	}
+	// 2 - switch case:
+	// Hiển thị tên thứ dựa vào ngày:
+	var day = 4;
+	if (day == 2) {
+		console.log('Thứ hai');
+	} else if (day == 3) {
+		console.log('Thứ ba');
+	} else if (day == 4) {
+		console.log('Thứ tư');
+	} else {
+		console.log('Ko phải thứ 2 3 4');
+	}
+	// Dùng switch case
+	var day = 3;
+	switch (day) {
+		case 2: console.log('Thứ hai');break;
+		case 3: console.log('Thứ 3');break;
+		case 4: console.log('thứ 4');break;
+		default: console.log('ko phải 234');
+	}
+ // - switch case dễ đọc code hơn elseif
+ // tuy nhiên switch case chỉ dùng khi biểu thức điều kiện là so sánh bằng
+</script>
