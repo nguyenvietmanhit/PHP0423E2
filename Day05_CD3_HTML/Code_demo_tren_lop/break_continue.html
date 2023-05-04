@@ -1,0 +1,51 @@
+break_continue.html
+<script>
+	// Từ khóa break - continue trong vòng lặp
+	// - break: thoát hẳn vòng lặp
+	for (var i = 1; i <= 10; i++) {
+		console.log(i);
+		if (i == 1) {
+			break;
+		}
+	}
+	//1
+	// - continue: bỏ qua lần lặp hiện tại = bỏ qua code phía sau continue, nhảy tới lần lặp kế tiếp
+	for (var j = 1; j <= 10; j++) {
+		if (j == 5 || j >= 2) {
+			continue;
+		}
+		console.log(j);
+	}
+	//1
+	// - Demo viết 1 số hàm:
+	// + Hàm kiểm tra chẵn lẻ
+	// - Xđ tham số: 1 tham số là số cần ktra
+	// - Xđ giá trị trả về: boolean
+	function isEven(number) {
+		if (number % 2 == 0) {
+			return true;
+		} 
+		return false;
+	}
+	// Gọi hàm
+	var test1 = isEven(5); //var test1 = false
+	console.log(test1); //false
+	// - Viết hàm kiểm tra số nguyên tố:
+	// Logic: chạy vòng lặp từ 2 đến số đó trừ đi 1, nếu số đó chia hết cho lần lặp nào đó thì ko phải số nguyên tố, và ngược lại
+	// + Xđ tham số: 1 tham số
+	// + Xđ giá trị trả về: boolean
+
+	function isPrime(number) {
+		//Mặc định ban đầu number luôn là số nto
+		var is_prime = true;
+		for (var i = 2; i <= Math.sqrt(number); i++) {
+			if (number % i == 0) {
+				is_prime = false;
+				break;
+			}
+		}
+		return is_prime;
+	}
+	var test1 = isPrime(9); //false
+	var test2 = isPrime(11); //true
+</script>

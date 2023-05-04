@@ -1,0 +1,156 @@
+<!-- demo_html.html
+Ngôn ngữ HTML
+- Hypertext Markup Language: ngôn ngữ đánh dấu siêu văn bản
+- Dùng để thiết kế khung trang Web
+- HTML luôn kết hợp với CSS và Javascript để tạo thành bộ 3 ngôn ngữ chuyên dùng để thiết kế giao diện Web (Frontend)
+- Học HTML là học các tag/thẻ cơ bản và cách hiển thị
+- HTML đc viết trong file .html hoặc .htm
+1 - Cấu trúc 1 trang HTML cơ bản -->
+<!DOCTYPE html>
+<!-- Thẻ HTML có 2 dạng: đầy đủ và khuyết -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Tiêu đề web của manhnv</title>
+	</head>
+	<body>
+		Chào bạn, manhnv
+		<!-- h1 ... h6 - thẻ tiêu đề, đầy đủ, heading, tốt cho SEO web -->
+		<h1>Thẻ h1</h1>
+		<h2>Thẻ h2</h2>
+		<h3>Thẻ h3</h3>
+		<h4>Thẻ h4</h4>
+		<h5>Thẻ h5</h5>
+		<h6>Thẻ h6</h6>
+		<!-- Thẻ p - đoạn văn, đầy đủ - paragraph -->
+		<p>Đoạn văn 1</p>
+		<p>Đoạn văn 2</p>
+		<!-- Thẻ br - xuống dòng trong file HTML, khuyết - break -->
+		Tôi là <br>
+		manhnv
+		<!-- Thẻ hr - tạo ra 1 đường ngang - khuyết - horizontal -->
+		<hr>
+		<!-- Thẻ b - bôi đậm, đầy đủ - bold 
+		Thẻ i - in nghiêng, đầy đủ - italic
+		Thẻ u - gạch chân, đầy đủ - underline
+		-->
+		<b>Thẻ b</b>
+		<i>Thẻ i</i>
+		<u>Thẻ u</u>
+		<!-- Thẻ div - chia các khối, dùng để xây dựng cấu trúc/bố cục trang - đầy đủ - divide -->
+		Text bất kỳ
+		<div>Thẻ div</div>
+		<div>
+			<u>Thẻ u</u>
+			<h1>Thẻ h1</h1>
+		</div>
+		<!-- Thẻ span - css cho text ngang hàng - đầy đủ -->
+		Text bất kỳ
+		<span>Thẻ span</span>
+		Màu này là màu 
+		<span style="color: red">đỏ</span>
+		<!-- Thẻ img - hiển thị hình ảnh, khuyết - image 
+		+ src: đường dẫn tới file ảnh - source
+		Copy 1 file ảnh bất kỳ vào cùng cấp/ngang hàng với file .html hiện tại
+		Có 2 kiểu đường dẫn:
+		Tuyệt đối/vật lý: C:/abc/def/test.jpg
+		Tương đối: test.jpg -> nên dùng đường dẫn tương đối khi nhúng file, ko bao giờ có / ở đầu đường dẫn
+		-->
+		<img 
+		src="test.jpg"
+		alt="Hiển thị text thay thế khi đường dẫn ảnh ko tồn tại - alternative" 
+		title="Hiển thị khi rê chuột qua ảnh"
+		width="100px"
+		height="100px" 
+		>
+		<!-- Thẻ table - tr - th - td - cấu trúc bảng - đầy đủ
+		tr - hàng của bảng - table row
+		th - cột tiêu đề của bảng - table heading
+		td - cột dữ liệu của bảng - table data
+		 -->
+		<table border="1" cellspacing="0" cellpadding="8">
+			<tr>
+				<th>Tên</th>
+				<th>Tuổi</th>
+			</tr>
+			<tr>
+				<!-- Gộp cột, đứng từ vị trí cột bắt đầu gộp. khi gộp xong phải xóa đi cột dư thừa tương ứng  -->
+				<td colspan="2">manhnv</td>
+				<!-- <td>33</td> -->
+			</tr>
+			<tr>
+				<!-- Gộp hàng: đứng từ vị trí cột bắt đầu gộp theo hàng, xóa cột ở hàng tiếp theo để giữ cấu trúc bảng -->
+				<td rowspan="2">abc</td>
+				<td>123</td>
+			</tr>
+			<tr>
+				<!-- <td>def</td> -->
+				<td>456</td>
+			</tr>
+		</table> 
+		<!-- Thẻ ul ol li - danh sách, đầy đủ
+		ul - unorder list
+		ol - order list
+		li - list item
+		 -->
+		 <ul>
+		 	<li>Item 1</li>
+		 	<li>Item 2</li>
+		 	<li>Item 3</li>
+		 </ul>
+		 <ol>
+		 	<li>Item 1</li>
+		 	<li>Item 2</li>
+		 	<li>Item 3</li>
+		 </ol>
+		 <!-- Thẻ a - link - đầy đủ - anchor -->
+		 <a href="https://google.vn" target="_blank">
+		 	Click để tới Google
+		 </a>
+		 <!-- Thẻ center - căn giữa - đầy đủ - chỉ dùng với HTML -->
+		 <center>Thẻ center</center>
+		 <!-- Thẻ button - nút - đầy đủ -->
+		 <button>Thẻ button</button>
+		 <!-- Thẻ form, input, textarea, select, option : form -->
+		 <form action="" method="post">
+		 	Nhập text
+		 	<input type="text" placeholder="Nhập text bất kỳ..." value="abcdef">
+		 	<br>
+		 	Nhập số:
+		 	<input type="number">
+		 	<br>
+		 	Nhập email:
+		 	<input type="email">
+		 	<br>
+		 	Nhập mật khẩu:
+		 	<input type="password">
+		 	<br>
+		 	Chọn giới tính:
+		 	<input type="radio" name="gender">Nam
+		 	<input type="radio" checked name="gender">Nữ
+		 	<input type="radio" name="gender">Khác
+		 	<br>
+		 	Chọn nghề nghiệp:
+		 	<input type="checkbox">Dev
+		 	<input type="checkbox">Tester
+		 	<input type="checkbox" checked>BrSE
+		 	<br>
+		 	Chọn quốc gia:
+		 	<select>
+		 		<option>VN</option>
+		 		<option>Korea</option>
+		 		<option>Japan</option>
+		 	</select>
+		 	<br>
+		 	Upload file:
+		 	<input type="file">
+		 	<br>
+		 	Nhập ghi chú trên nhiều hàng:
+		 	<textarea></textarea>
+		 	<br>
+		 	<!-- Nút  submit form -->
+		 	<input type="submit" value="Gửi thông tin">
+		 	<input type="reset" value="Reset form">
+		 </form>
+	</body>
+</html>
