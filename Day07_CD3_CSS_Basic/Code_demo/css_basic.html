@@ -1,0 +1,111 @@
+<!-- css_basic.html 
+Ngôn ngữ CSS
+- Bộ 3 ngôn ngữ frontend: HTML, CSS,
+Javascript
+- Cascading Stylesheet
+- Là ngôn ngữ hướng tới thiết kế cho trang web, cụ thể là trang trí cho HTML
+- Có nhiều phiên bản CSS, phổ biến nhất CSS3
+- Responsive khi thiết kế web: website hiển thị tương thích trên mọi thiết bị
+Responsive đc thực hiện bằng CSS
+- Có nhiều thư viện dựa trên CSS: Bootstrap
+- Học CSS theo 2 phần:
++ Các thuộc tính CSS cơ bản
++ Dựng layout với CSS
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Basic</title>
+	<!-- Link tới file .css -->
+	<link rel="stylesheet" href="test.css">
+</head>
+<body>
+	<h1 style="color: red">Thẻ h1</h1>
+
+	<!-- 
+		Cú pháp khai báo CSS:
+		selector { property: value; }
+		+ selector: là đối tượng chịu tác động của CSS
+		+ property: thuộc tính CSS
+		+ value: giá trị tương ứng của thuộc tính
+		- Khai báo vùng làm việc với CSS:
+		+ Inline trong thẻ HTML: dễ viết nhưng code phức tạp và ko có tính sử dụng lại
+		+ Inline trong file .html: code CSS tách biệt với HTML tuy nhiên ko có tính sử dụng lại
+		+ External trong file .css: sử dụng trong thực tế vì có tính sử dụng
+		 -->
+		<h2 style="color: yellow;">
+			Inline trong thẻ HTML
+		</h2>
+
+		<style type="text/css">
+			h3 { color: red; }
+		</style>
+		<h3>
+			Inline trong file .html
+		</h3>
+
+		<!-- Tạo 1 file test.css ngang hàng với file .html hiện tại  -->
+		<h4>
+			External trong file .css
+		</h4>
+
+		<style>
+		/*- Selector: là đối tượng sẽ chịu tác động bởi CSS*/
+		/*+ Selector theo tên thẻ*/
+		h5 { color: red; }
+		/*+ Selector theo thuộc tính id và class
+		của thẻ*/
+		/*Selector theo id:  #*/
+		/*id mang tính duy nhất*/
+		#p1 { color: blue; }		
+		/*Selector theo class:  .*/
+		/*Class sử dụng cho nhiều đối tượng giống nhau*/
+		.p2 { color: green; }
+		/* + Selector theo cấp: */
+		#personal a { color: red; }
+		/* + Selector theo thuộc tính thẻ */
+		input[type=text] {background-color: red;}
+		/* + Selector theo trạng thái thẻ */
+		/* Hover */
+		#h3-hover:hover { background-color: red; }
+		/* Vị trí  */
+		ul li:first-child { color: blue; }
+		ul li:last-child { color: yellow; }
+		ul li:nth-child(2) { color: red; }
+		ul li:nth-child(3) { color: pink; }
+		/* Trước sau */
+		#a3:before { content: "Phía trước"; }
+		#a3:after { content: "Phía sau"; }
+		</style>
+		<a href="#" id="a3">Thẻ a3</a>
+
+		<ul>
+			<li>Li thứ nhất</li>
+			<li>Li thứ 2</li>
+			<li>Li thứ 3</li>
+			<li>Li thứ 4</li>
+		</ul>
+
+		<h3 id="h3-hover">
+			Rê chuột qua để đổi màu nền
+		</h3>
+
+		<input type="text">
+		<input type="password">
+		<input type="number">
+
+		<a href="#">Thẻ a1</a>
+		<div id="personal">
+			<a href="#">Thẻ a2</a>
+		</div>
+
+		<p id="p1">Thẻ p1</p>
+		<p class="p2">Thẻ p2</p>
+		<i class="p2">Thẻ i</i>
+
+		 <h5>Thẻ h5</h5>
+		 <h5>Thẻ h5 thứ 2</h5>
+</body>
+</html>

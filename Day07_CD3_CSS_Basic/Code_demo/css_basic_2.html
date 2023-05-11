@@ -1,0 +1,100 @@
+<!-- css_basic_2.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Thuộc tính CSS cơ bản</title>
+</head>
+<body>
+	<style>
+		/*1 - Màu nền*/
+		#div-bg {
+			/* 2 đơn vị màu cơ bản: đơn sắc (tên tiếng anh) và đa sắc (mã hexa gồm 6 ký tự) */
+			background-color: #2439c2;
+			/*Copy 1 ảnh bất kỳ cùng cấp file hiện tại*/
+			/* Dùng Devtool của trình duyệt để CSS trực quan nhất: F12 hoặc Chuột phải chọn Inspect HTML, chọn tab Element */
+			/*background-color: #2439c2;*/
+		    /*background-image: url(avatar.jpg);*/
+		    height: 200px;
+		    /*background-repeat: no-repeat;*/
+		    /*background-position: center;*/
+		    /*Viết gộp: */
+		    background: #2439c2 url(avatar.jpg) no-repeat center;
+		    /*background: red;*/
+		    
+		}
+		/*2 - Font */
+		#p-font {
+			/*Các font family lưu trữ tại C: Window/Fonts*/
+		    font-family: Arial;
+		    font-style: italic;
+		    font-weight: bold;
+		    font-size: 30px;
+		}
+		/* 3 - Text */
+		.h1-text {
+		    color: red;
+		    text-align: center;
+		    text-decoration: underline;
+		    text-transform: uppercase;
+		    text-shadow: 3px 3px 3px red;
+		    line-height: 30px;
+		}
+		/* 4 - Border */
+		#h2-border {
+		    /*border-style: solid;
+		    border-color: red;
+		    border-width: 3px;*/
+		    border-radius: 10px;
+		    /*Gộp: */
+		    border: 3px solid red;
+		}
+		/*5 - Margin:  khoảng cách giữa các đối tượng LIỀN KỀ nhau*/
+		#div1 {
+			background: red;
+		}
+		#div2 {
+			background: green;
+			margin-top: 20px;
+		    margin-bottom: 10px;
+		    margin-left: 30px;
+		    margin-right: 20px;
+		    /*Gôp: */
+		    /*Cả 4 hướng*/
+		    margin: 40px;
+		    /*trên = dưới = 10px, trái = phải = 20px*/
+		    margin:  10px 20px; 
+		    /*top - right - bottom - left*/
+		    margin:  10px 20px 30px 40px;
+		}
+		#div3 {
+			background: blue;
+		}
+		/*6 - Padding:  khoảng cách tính từ viền đến nội dung bên trong của 1 đối tượng*/
+		#div4 {
+		    background: green;
+		    padding-top: 30px;
+		    padding-left: 20px;
+		    padding-right: 40px;
+		    padding-bottom: 30px;
+		    /*Viết gộp như margin*/
+		}
+	</style>
+
+	<div id="div4">Div 4 padding</div>
+
+	<div id="div1">Div 1</div>
+	<div id="div2">Div 2</div>
+	<div id="div3">Div 3</div>
+
+	<h2 id="h2-border">Thẻ h2</h2>
+
+	<h1 class="h1-text">Thẻ h1</h1>
+
+	<p id="p-font">Thẻ p với css font</p>
+
+	<div id="div-bg">Thẻ div</div>
+
+</body>
+</html>
