@@ -1,0 +1,73 @@
+<!-- demo_layout.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo layout</title>
+</head>
+<body>
+	<!-- 
+
+	- Dựng HTML: 
+	Nên đặt class cho các phần tử HTML để CSS về sau
+	Phân tích từ trên xuống dưới trang web, chia làm các thành phần theo từng hàng, nếu hàng nào có từ 2 cột trở lên thì mới áp dụng cấu trúc HTML row-col để sử dụng Flexbox về sau
+	- Dựng CSS
+	 -->
+	 <div class="container">
+	 	<div class="logo">
+	 		<h3 class="heading">Logo</h3>
+	 	</div>
+	 	<div class="menu">
+	 		<ul>
+	 			<li><a href="#">Home</a></li>
+	 			<li><a href="#">Products</a></li>
+	 			<li><a href="#">Services</a></li>
+	 		</ul>
+	 	</div>
+	 	<div class="feature">Feature</div>
+	 	<div class="column">
+	 		<div class="row">
+	 			<div class="item">Column One</div>
+	 			<div class="item">Column Two</div>
+	 			<div class="item">Column Three</div>
+	 		</div>
+	 	</div>
+	 	<!-- copyright html code -->
+	 	<div class="footer">&#169; Copyright 2011</div>
+	 </div>
+	 <style>
+	 	/*Instant eyedropper*/
+	 	.container {
+		    /* background: red; */
+		    width: 60%;
+		    margin: auto;
+		}
+
+		.heading {
+		    margin: 0;
+		}
+
+		.logo {
+		    background: #EFEFEF;
+		    text-align: center;
+		    padding: 5px 0;
+		}
+
+		.row {
+		    display: flex;
+		}
+
+		.item {
+		    width: 33.33%;
+		    background: #efefef;
+		    height: 100px;
+		    text-align: center;
+		}
+
+		.item:nth-child(2) {
+		    margin: 0 20px;
+		}
+	 </style>
+</body>
+</html>

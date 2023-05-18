@@ -1,0 +1,72 @@
+<!-- layout.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Layout CSS</title>
+</head>
+<body>
+<!-- Layout web là gì? 
+Chia trang web thành các thành phần / bố cục
+Dựng layout là xây dựng cấu trúc hàng/cột
+CÁc kỹ thuật dựng layout:
++ Table HTML: khó để responsive trên mobile
++ CSS Float: có thể dùng nhưng phải fix bị vỡ giao diện lệch hàng cột
++ CSS Flex: dùng vì đơn giản và linh hoạt
++ CSS Grid: phức tạp hơn flex
+ 1 - Thành phần inline và block
+ block: div, h, p, ul, ol ..
+ inline: b i u span a ...
+ - Nên sử dụng inline-block thay inline để linh hoạt margin trên dưới
+-->
+	<div id="div1">Thẻ div</div>  Text test
+
+	<b id=b1>Thẻ b</b> Text test thẻ b
+	<style>
+		li {
+		    display: inline-block;
+		    margin: 0 10px;
+		}
+	</style>
+
+	<!-- Hướng dẫn dựng layout với Flexbox:
+		- Xác định cấu trúc chuẩn bị dựng là 1 hàng và bao nhiêu cột
+		- Tạo 1 cấu trúc HTML cha con tương ứng, số cột là số thẻ div tương ứng trong thành phần con
+		- Demo cấu trúc layout 1 hàng 3 cột bằng nhau
+	 -->
+	 <style>
+	 	.col1 {
+	 		background: red;
+	 		width: 33.33%;
+	 	}
+	 	.col2 {
+	 		background: green;
+	 		width: 33.33%;
+	 	}
+	 	.col3 {
+	 		background: blue;
+	 		width: 33.33%;
+	 	}
+	 	/*Sử dụng CSS để áp dụng kỹ thuật Flexbox: */
+	 	/* - CSS thành phần cha: display: flex */
+	 	.row {
+	 		display: flex;
+	 	}
+	 	/* - Set width cho các thành phần con cho phù hợp, nên set đơn vị width là %, 1 hàng có width = 100%*/
+	 	/*Mặc định flex luôn luôn giữ các thành phần con nằm trên 1 hàng ko quan tâm về kích thước 1 hàng có > 100% hay ko*/
+	 </style>
+	 <div class="row">
+	 	<div class="col1">Div 1</div>
+	 	<div class="col2">Div 2</div>
+	 	<div class="col3">Div 3</div>
+	 </div>
+
+	<ul>
+		<li><a href="#">Link 1</a></li>
+		<li><a href="#">Link 2</a></li>
+		<li><a href="#">Link 3</a></li>
+		<li><a href="#">Link 4</a></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!-- css_basic_3.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS cơ bản phần 3</title>
+</head>
+<body>
+	<style>
+		/* 1 - Width - height */
+		#w-h {
+		    background: red;
+		    width: 100px;
+		    height: 100px;
+		    /* max-width: 100px; */
+		}
+		/*2 - Position: di chuyển phần tử mà ko ảnh hưởng đến xung quanh nó, tưởng tượng position nổi lên trên, nhìn thấy position trc */
+		
+		/* relative: lấy chính nó để căn khi di chuyển */
+		/* absolute: lấy trình duyệt để căn, hay dung khi muốn 1 phần tử con chỉ di chuyển dựa vào phần tử cha */
+		body {
+			height: 1500px;
+		}
+		#pos1 {
+			width: 50px;
+			height: 50px;
+			background: yellow;
+		}
+		/* fixed: vị trí cố định khi cuộn trang: banner quảng cáo */
+		#pos2 {
+			width: 60px;
+			height: 60px;
+			background: blue;
+			/*position: fixed;
+			right: 0;*/
+		}
+		/*con là absolute, cha là relative thì con sẽ luôn luôn di chuyển dựa vào cha*/
+		#parent {width: 100px; height: 100px; background: red;}
+		#child {width: 50px; height: 50px; background: green;}
+		/*3 - overflow: xử lý khi bị tràn nội dung*/
+		#ov {
+			width: 50px;
+			background: yellow;
+			overflow: hidden;
+			opacity: 0.5;
+		}
+		/*4 - opacity: độ mờ:  0 - 1*/
+		/*5 - transition:  hiệu ứng chuyển đổi */
+		#tran:hover {
+			background: green;
+		}
+ 	</style>
+ 	<h2 id="tran">Hover để đổi màu nền</h2>
+
+ 	<div id="ov">
+ 		aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+ 	</div>
+
+ 	<div id="parent">
+ 		<div id="child">Child of parent</div>
+ 	</div>
+
+	<div id="pos1">Div pos1</div>
+	<div id="pos2">Div pos2</div>
+
+	<div id="w-h">Width height</div>
+</body>
+</html>
