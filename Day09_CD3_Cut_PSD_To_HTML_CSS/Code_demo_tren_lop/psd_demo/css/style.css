@@ -1,0 +1,76 @@
+/*psd_demo/css/style.css*/
+/*Nhúng font vào hệ thống*/
+@font-face {
+	src: url(../fonts/Pacifico-Regular.ttf);
+	font-family: Pacifico-Regular;
+}
+
+.header {
+    background: #2F2F2F;
+    padding: 8px 0;
+}
+.container {
+    width: 70%;
+    margin: auto;
+}
+.row {
+    display: flex;
+}
+.logo {
+	width: 40%;
+    font-size: 36px;
+    color: white;
+    font-family: Pacifico-Regular;
+}
+.menu {
+    width: 60%;
+}
+.menu-ul {
+    margin: 0;
+}
+li {
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+body {
+	font-family: Myriad Pro;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+.main-top {
+    background: #F1F1F1;
+    padding: 40px 0;
+}
+.article {
+    width: 40%;
+}
+.main-img {
+    width: 60%;
+}
+.learn-more {
+    background: #F99640;
+    padding: 8px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.main-center {
+    padding: 40px 0;
+}
+.item {
+    width: 33.33%;
+}
+.black-div {
+    background: black;
+    height: 100px;
+}
+.item {
+	width: 33.33%;
+}
+.item:nth-child(2) {
+    margin: 0 30px;
+}
