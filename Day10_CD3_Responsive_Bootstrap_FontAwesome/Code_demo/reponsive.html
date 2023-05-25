@@ -1,0 +1,84 @@
+<!-- reponsive.html 
+- Responsive web là gì?
+Là kỹ thuật thiết kế web hiển thị tương thích với mọi thiết bị
+Tương thích = dễ đọc và ko xuất hiện thanh cuộn ngang
+- Hiện nay 100% website đều hướng tới responsive: SEO web
+- Sử dụng CSS để responsive
+- Thư viện hỗ trợ responsive: Bootstrap 
+- Có 3 thiết bị chính: laptop/pc, ipad/tablet, mobile
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- Bắt buộc phải có để responsive đc chính xác -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo responsive</title>
+</head>
+<body>
+	<style type="text/css">
+/*
+- Xác định miền kích thước của 3 thiết bị: 
+PC: min-width: 1024px
+Ipad: min-width: 768px, max-width: 1023px
+Mobile: max-width: 767px
+- Quy tắc về vị trí code CSS reponsive: PC -> Ipad -> Mobile -> độ ưu tiên
+*/
+/*		CSS cho PC*/
+		h1 { color: red; }
+
+/*		CSS cho Ipad*/
+		@media(min-width: 768px) and (max-width: 1023px) {
+			h1 { color: yellow; }
+		}
+/*		CSS cho Mobile*/
+		@media(max-width: 767px) {
+			h1 { color: green; }
+		}
+
+
+		.col1 {
+			background: red;
+		}
+		.col2 {
+			background: green;
+		}
+		.col3 {
+			background: blue;
+		}
+		.col4 {
+			background: yellow;
+		}
+		.row {
+    		display: flex;
+		}
+		.col1, .col2, .col3, .col4 {
+			width: 25%;
+		}
+/*	CSS Ipad */
+		@media(min-width: 768px) and (max-width: 1023px) {
+/*	 Ipad hiển thị 2 hàng, mỗi hàng 2 cột bằng nhau		*/
+			.row {
+/*	Bỏ đi tính chất mặc định của flex, nếu width trên 1 hàng > 100% thì xuống hàng mới			*/
+				flex-wrap: wrap;
+			}
+			.col1, .col2, .col3, .col4 { width:50%; }
+		}
+/*	CSS Mobile	*/
+		@media(max-width: 767px) {
+			.row { flex-wrap:wrap; }
+			.col1, .col2, .col3, .col4 { width:100%; }
+		}
+	</style>
+	<div class="row">
+		<div class="col1">Div 1</div>
+		<div class="col2">Div 2</div>
+		<div class="col3">Div 3</div>
+		<div class="col4">Div 4</div>
+	</div>
+
+	<h1>Pc màu đỏ, Ipad vàng, Mobile xanh</h1>
+
+	<h3>PC màu nền xanh, Ipad nền đỏ, Mobile nền vàng</h3>
+</body>
+</html>

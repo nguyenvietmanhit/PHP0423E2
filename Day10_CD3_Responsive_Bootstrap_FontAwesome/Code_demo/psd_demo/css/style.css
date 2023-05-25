@@ -74,3 +74,35 @@ a {
 .item:nth-child(2) {
     margin: 0 30px;
 }
+
+/*CSS Ipad*/
+@media(min-width: 767px) and (max-width: 1023px) {
+
+}
+
+/*CSS Mobile*/
+@media(max-width: 767px) {
+/*  Responsive trên mobile dựa trên PC, tùy vào cảm con mắt
+của mỗi người  */
+    .header {
+        background: orange;
+    }
+    .row {
+        flex-wrap: wrap;
+    }
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+    .menu {
+        width: 100%;
+        text-align: center;
+    }
+    .article, .main-img {
+        width: 100%;
+    }
+
+    .article {
+    margin-bottom: 20px;
+}
+}
