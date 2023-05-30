@@ -1,0 +1,72 @@
+<!-- event_submit.html
+- Sự kiện submit: xảy ra khi submit form/ gửi thông tin từ form
+lên
+Hành động submit thực hiện theo 2 cách: click vào nút submit, đứng trong input và enter
+sự kiện submit chỉ áp dụng trên thẻ form
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>Demo sự kiện submit form</title>
+ </head>
+ <body>
+ 	<form action="" method="post" id="form-test">
+ 		Nhập tên: <input type="text" id="fullname"> <br>
+ 		Nhập tuổi: <input type="text" id="age"> <br>
+ 		<input type="submit" value="Hiển thị">
+ 	</form>
+ 	<h3 id="error" style="color: red"></h3>
+ 	<h3 id="result" style="color: green"></h3>
+
+ 	<script type="text/javascript">
+ 		// B1:
+ 		var obj_form = document.querySelector('#form-test');
+ 		// B2:
+ 		obj_form.addEventListener('submit', function() {
+ 			//alert('Form đc submit!');
+ 			// Quy trình xử lý form:
+ 			// - B1: Tạo biến chứa lỗi và kết quả:
+ 			var error = '';
+ 			var result = '';
+ 			// - B2: Lấy các giá trị từ form:
+ 			// Tên:
+ 			var obj_fullname = document.querySelector('#fullname');
+ 			var fullname = obj_fullname.value;
+ 			// Tuổi:
+ 			var obj_age = document.querySelector('#age');
+ 			var age = obj_age.value;
+ 			// - B3: Validate form: ktra dữ liệu nhập để loại bỏ các dữ liệu vô nghĩa, giúp bảo mật form hơn
+ 			// + Tên tuổi ko đc để trống: so sánh với chuỗi rỗng
+ 			// + Tên phải > 3 ký tự: .length
+ 			// + Tuổi phải là số: isNaN - is Not a Number
+ 			// Khi có lỗi validate, gán cho biến error ở B1
+ 			if (fullname == '' || age == '') {
+ 				error = 'Tên tuổi ko đc để trống';
+ 				// Focus chuột vào đúng input đang lỗi
+ 				obj_fullname.focus();
+ 			} else if (fullname.length < 3) {
+ 				error = 'Tên phải > 3 ký tự';
+ 			} else if (isNaN(age)) {
+ 				error = 'Tuổi phải là số';
+ 			}
+ 			// - B4: Xử lý logic chính (hiển thị thông tin) chỉ khi ko có lỗi nào xảy ra, dựa vào biến error
+ 			// Gán kết quả cho biến result
+ 			if (error == '') {
+ 				result += "Tên: " + fullname;
+ 				result += "<br> Tuổi: " + age;
+ 			}
+ 			// - B5: Đổ thông tin error và result ra form, tạo sẵn
+ 			// 2 thẻ HTML ko có nội dung để đổ vào
+ 			document.querySelector('#error').innerHTML = error;
+ 			document.querySelector('#result').innerHTML = result;
+ 			// Setting giữ lại log khi code JS
+ 			// Do khi submit form sẽ tải lại trang nên các thông tin trc đó sẽ mất hết, để giữ lại đc các thông tin này cần ngăn ngừa hành vi tải lại trang này
+ 			// Obj event chỉ có sẵn bên trong hàm callback
+ 			event.preventDefault();
+ 		})
+
+ 	</script>
+ </body>
+ </html>
