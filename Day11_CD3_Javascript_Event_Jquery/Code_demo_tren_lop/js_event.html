@@ -1,0 +1,118 @@
+<!-- js_event.html 
+- Xử lý sự kiện với Javascript
++ Để trang web có thể tương tác đc, thì cần Javsacript
++ JS tương tác thông qua các sự kiện
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo sự kiện trong JS</title>
+</head>
+<body>
+	<h2 onclick="alert('clicked!')">
+		Click để hiển thị cảnh báo
+	</h2>
+
+	<h1 id="h1-click">Demo sk click</h1>
+	<script>
+
+
+		// 1 - onclick: xảy ra khi click 1 selector
+		// - B1: Lấy obj muốn gắn sự kiện:
+		var obj_h1 = document.querySelector('#h1-click');
+		console.log(obj_h1);
+		// 1 obj truy cập đc thuộc tính và phương thức của nó
+		// - B2: Gắn sự kiện cho obj đó
+		// Hàm callback: chờ sự kiện trc đó xảy ra xong thì mới chạy code trong hàm callback
+		// Hàm callback ko có tên hàm 
+		obj_h1.addEventListener('click', function() {
+			// Code bên trong hàm callback
+			alert('click thẻ h1');
+		});
+
+	</script>
+
+	<select id="country">
+		<option value="vn">Việt Nam</option>
+		<option value="kr">Korea</option>
+		<option value="jp">Japan</option>
+	</select>
+	<script>
+		// 2 - onchange: xảy ra khi thay đổi giá trị selector: chỉ áp dụng cho select, radio, checkbox
+		// - B1: Lấy obj
+		var obj_country = document.querySelector('#country');
+		// - B2: Gắn sk
+		obj_country.addEventListener('change', function() {
+			// Lấy thuộc tính value:
+			// alert(this.value); // sử dụng this để tham chiếu đến chính obj hiện tại
+			// Lấy text trong option:
+			alert(this.options[this.selectedIndex].text);
+		})
+	</script>
+
+	<h3 id="h3-event">Hover qua để xem hiệu ứng</h3>
+	<script>
+		// 3 - onmouseenter và onmouseleave: xảy ra khi rê chuột và bỏ rê chuột qua selector, luôn song hành
+		// - B1: Lấy obj
+		var obj_h3 = document.querySelector('#h3-event');
+		// - B2: Gắn sk
+		// onmouseenter:
+		obj_h3.addEventListener('mouseenter', function() {
+			this.style.background = 'red';
+		})
+		// onmouseleave:
+		obj_h3.addEventListener('mouseleave', function() {
+			this.style.background = 'white';
+		})
+	</script>
+
+
+
+	<script>
+		// 4 - onload: xảy ra khi trang đc tải xong (HTML CSS)
+		window.addEventListener('load', function() {
+			// - B1: Lấy obj
+			var obj_h4 = document.querySelector('#h4-click');
+			// - B2: Gắn sk
+			obj_h4.addEventListener('click', function() {
+				alert('click h4');
+			});
+		})
+		
+	</script>
+	<h4 id="h4-click">Click h4 để show alert</h4>
+
+	<input type="text" id="fullname" placeholder="Nhập tên">
+	<script>
+		// 5 - onkeyup: xảy ra khi nhập xong 1 ký tự trong input
+		// - B1: Lấy obj
+		var obj_input = document.querySelector('#fullname');
+		// - B2: Gắn sk
+		// obj_input.addEventListener('keyup', function() {
+		// 	console.log(this.value);
+		// })
+
+		// 6 - onkeypress: xảy ra ngay khi nhấn vào 1 ký tự, chưa phải thời điểm nhả phím ra
+		obj_input.addEventListener('keypress', function() {
+			console.log(this.value);
+		})
+	</script>
+
+	<input type="number" id="age">
+	<script>
+		// 7 - onfocus + onblur: xảy ra khi focus(ở bên trong) input và ngược lại
+		// B1: Lấy obj
+		var obj_age = document.querySelector('#age');
+		// B2: Gắn sk
+		obj_age.addEventListener('focus', function() {
+			this.style.background = 'red';
+		});
+		obj_age.addEventListener('blur', function() {
+			this.style.background = 'white';
+		});
+	</script>
+
+</body>
+</html>

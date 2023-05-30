@@ -1,0 +1,84 @@
+<!-- process_form.html 
+Quy trình xử lý form với Javascript
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Xử lý form với JS</title>
+</head>
+<body>
+	<form id="form-info">
+		Nhập họ tên:
+		<input type="text" id="fullname">
+		<br>
+		Nhập tuổi: 
+		<input type="text" id="age">
+		<br>
+		Chọn giới tính:
+		<input type="radio" name="gender" value="0">Nam
+		<input type="radio" name="gender" value="1">Nữ
+		<br>
+		<input type="submit" value="Show info">
+	</form>
+	<!-- Thẻ chờ (ko có nội dung) để đổ dữ liệu vào -->
+	<h3 id="error" style="color: red"></h3>
+	<h3 id="result" style="color: green"></h3>
+
+	<script>
+		// - B1: Lấy obj form:
+		var obj_form = document.querySelector('#form-info');
+		// - B2: Gắn sk submit cho obj form (sk submit chỉ áp dụng với thẻ form)
+		obj_form.addEventListener('submit', function() {
+			// QUY TRÌNH XỬ LÝ FORM:
+			// - B1: Khai báo 2 biến lưu lỗi và kết quả sẽ hiển thị
+			var error = '';
+			var result = '';
+			// - B2: Lấy obj và lấy ra giá trị các input trong form
+			// Lấy fullname:
+			var obj_fullname = document.querySelector('#fullname');
+			var fullname = obj_fullname.value;
+			// alert(fullname);
+			// Lấy tuổi:
+			var obj_age = document.querySelector('#age');
+			var age = obj_age.value;
+			// - B3: Validate form: lọc dữ liệu đầu vào tránh dữ liệu rác và giúp bảo mật form 
+			// + Tên và tuổi phải nhập: so sánh chuỗi rỗng
+			// + Tên phải ít nhất 3 ký tự: .length
+			// + Tuổi phải là số: isNaN = is not a number
+			// Nếu có lỗi thì gán cho biến error
+			if (fullname == '' || age == '') {
+				error = 'Tên và tuổi phải nhập';
+				obj_fullname.focus(); //focus vào input
+			} else if (fullname.length < 3) {
+				error = 'Tên phải ít nhất 3 ký tự';
+				obj_fullname.focus();
+			} else if (isNaN(age) == true) {
+				error = 'Tuổi phải là số';
+				obj_age.focus();
+			}
+			// - B4: Xử lý logic chính (hiển thị dữ liệu)
+			//chỉ khi hệ thống ko có lỗi nào xảy ra
+			if (error == '') {
+				result += "Tên của bạn: " + fullname;
+				result += '<br>';
+				result += "Tuổi của bạn: " + age;
+			}
+			// - B5: Hiển thị error và result ra màn hình:
+			// Cần chuẩn bị HTML để đổ 2 biến ra
+			// + Đổ error:
+			var obj_error = document.querySelector('#error');
+			obj_error.innerHTML = error; //innerText
+			// + Đổ result:
+			var obj_result = document.querySelector('#result');
+			obj_result.innerHTML = result;
+			// Hiện tại đang bị tình trạng hiển thị xong mất luôn? Do hành vi mặc định của sự kiện submit là tải lại trang, cần ngăn ngừa hành vi mặc định này để giữ lại đc hiển thị
+			// event là 1 obj chỉ có sẵn bên trong hàm callback khi gọi sự kiện
+			event.preventDefault();
+			// Khi code JS, cần cài đặt trình duyệt để lưu lại log lỗi sau mỗi lần tải lại trang
+			// Inspect -> Console -> Icon Setting -> Tích vào Preserve Log
+		})
+	</script>
+</body>
+</html>
