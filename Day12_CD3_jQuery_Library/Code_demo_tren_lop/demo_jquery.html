@@ -1,0 +1,106 @@
+<!-- demo_jquery.html 
+1 - Thư viện jQuery
++ Là thư viện viết dựa trên Javascript
++ Hướng viết ít làm nhiều, thao tác với Javascript dễ dàng hơn
++ Hầu hết các website PHP đều tích hợp jQuery
+2 - Tích hợp jQuery:
++ Download file thủ công
++ Dùng link CDN
+-->
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+<script>
+	// - $ là ký tự đặc trưng nhất của jQuery, cú pháp của jQuery luôn bắt đầu bằng $
+	// document.ready = sự kiện onload của JS
+	$(document).ready(function() {
+		// alert('test jQuery')
+	})
+	// - Học jQuery là học các module của nó:
+	// + jQuery Selector: giúp xác định đối tượng bị chịu tác động với cú pháp selector của CSS
+	// + jQuery Attribute: thao tác dễ dàng với các thuộc tính của selector
+	// + jQuery DOM: DOM - Document Object Model, là cây phả hệ HTML, giúp thao tác với DOM dễ dàng (thêm sửa xóa)
+	// + jQuery Event: xử lý sự kiện
+	// + jQuery Effect: xử lý về hiệu ứng ẩn hiện, animate ...
+	// + jQuery Ajax: Ajax - Asynchronous Javascript and XML, giúp xử lý ko đồng bộ dễ dàng hơn so với JS thuần
+	// Đồng bộ: thực thi chờ nhau, xong chức năng thì mới đến lượt chức năng khác
+	// Không đồng bộ: tại 1 thời điểm có thể thực thi nhiều chức năng
+
+
+</script>
+	<h2>Demo xử lý form với jQuery</h2>
+	<form id="form-info">
+		Nhập tên: 
+		<input type="text" id="fullname">
+		<br>
+		Nhập tuổi:
+		<input type="text" id="age">
+		<br>
+		<input type="submit" value="Show info">
+	</form>
+	<h3 id="error" style="color: red"></h3>
+	<h3 id="result" style="color: green"></h3>
+
+	<script>
+		// Xử lý form với jQuery
+		$(document).ready(function() {
+			// + Lấy obj muốn thao tác
+			// var obj_form = document.querySelector('#form-info');
+			// console.log(obj_form);
+			// var obj_2 = $('#form-info');
+			// console.log(obj_2);
+			// Obj jQuery hoàn toàn khác obj JS thuần, ko sử dụng chung đc các hàm của nhau
+			var obj_form = $('#form-info');
+			// + Gắn sự kiện
+			obj_form.submit(function() {
+				// alert('submit form với jquery');
+				// - Quy trình xử lý form:
+				// + B1: Khai báo biến chứa lỗi và kết quả
+				var error = '';
+				var result = '';
+				// + B2: Lấy giá trị từ form
+				// Lấy họ tên:
+				var fullname = $('#fullname').val();
+				var age = $('#age').val();
+				// + B3: Validadate form:
+				// - Tên và tuổi ko đc để trống
+				// - Tên phải ít nhất 3 ký tự
+				// - Tuổi phải là số
+				if (fullname == '' || age == '') {
+					error = 'Tên và tuổi ko đc để trống';
+					$('#fullname').focus();
+					$('#fullname').css('background', 'red');
+				} else if (fullname.length < 3) {
+					error = 'Tên phải ít nhất 3 ký tự';
+					$('#fullname').focus();
+				} else if (isNaN(age) == true) {
+					error = 'Tuổi phải là số';
+					$('#age').focus();
+				}
+				// + B4: Xử lý logic chính chỉ khi hệ thống ko có lỗi nào xảy ra
+				if (error == '') {
+					result += "Tên của bạn: " + fullname;
+					result += "<br>";
+					result += "Tuổi của bạn: " + age;
+				}
+				// + B5: Hiển thị error và result ra màn hình
+				$('#error').html(error);
+				$('#result').html(result);
+				// Ngăn ngừa hành vi tải lại trang sau khi submit form để giữ lại các message vừa set
+				event.preventDefault();
+			})
+		})
+	</script>
+
+
+</body>
+</html>
+
+
+

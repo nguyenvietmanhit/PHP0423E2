@@ -1,0 +1,61 @@
+<!-- jquery_validate.html 
+1 - Thư viện jQuery Validate
++ Là thư viện giúp validate form dễ dàng và tiện lợi 
++ Hoạt động dựa trên thư viện jQuery
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo thư viện jQuery Validate</title>
+	<!-- Tích hợp, bắt buộc phải tích hợp jQuery trước -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+</head>
+
+<body>
+	<!-- Bắt buộc phải khai báo thuộc tính name cho input vì jQuery Validate dựa vào name để validate -->
+	<form id="form-info">
+		Nhập tên:
+		<input type="text" name="fullname">
+		<br>
+		Nhập tuổi:
+		<input type="text" name="age">
+		<br>
+		<input type="submit" value="Show info">
+	</form>
+	<script>
+		$(document).ready(function() {
+			// Tạo obj chứa thông tin cần thiết cho validate, sử dụng cú pháp mà jQuery Validate yêu cầu
+			var obj_validate = {
+				rules: {
+					fullname: {
+						required: true,
+						minlength: 3,
+						email: true
+					},
+					age: {
+						required: true,
+						number: true
+					}
+				},
+				messages: {
+					fullname: {
+						required: 'Phải nhập tên',
+						minlength: 'Tối thiểu 3 ký tự',
+						email: 'Phải là định dạng email'
+					},
+					age: {
+						required: 'Phải nhập tuổi',
+						number: 'Phải nhập số'
+					}
+				}
+			};
+			// Gọi hàm của thư viện jQuery Validate trên đối tượng form
+			$('#form-info').validate(obj_validate);
+
+		})
+	</script>
+</body>
+</html>
