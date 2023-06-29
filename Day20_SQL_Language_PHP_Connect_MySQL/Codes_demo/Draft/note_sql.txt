@@ -1,0 +1,25 @@
+note_sql.txt
+-
+
+
+# - Export CSDL:
+# Export file .sql
+# Với PHPMyadmin, cần truy cập CSDL muốn export, menu Export
+# - Import CSDL:
+# Với PHPMyadmin, cần tạo thủ công CSDL trước r mới import đc
+
+
+# Lấy tất cả sản phẩm kèm theo tên danh mục tương ứng:
+# Khi dùng JOIN thì bắt buộc phải chỉ định tên bảng cụ thể trước tên
+# trường
+# + INNER JOIN: bảng gốc = left table =  products, bảng right table = categories
+# Lặp qua toàn bộ bản ghi của bảng gốc, mỗi lần đi qua từng bản ghi, sẽ join vào bảng liên
+# kết, nếu có bảng liên kết có dữ liệu => trả về, ngược lại ko
+# INNER đảm bảo dữ liệu trả về là toàn vẹn nhất
+SELECT products.*, categories.name AS category_name FROM products
+INNER JOIN categories ON products.category_id = categories.id;
+# + LEFT JOIN: giống INNER, chỉ khác ở chỗ nếu bảng liên kết ko có
+# tìm thấy thì vẫn trả về, tuy nhiên set null cho các trường trong bảng
+# liên kết
+SELECT products.*, categories.name AS category_name FROM products
+LEFT JOIN categories ON products.category_id = categories.id;
