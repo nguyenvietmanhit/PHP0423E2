@@ -37,3 +37,24 @@ các bảng với nhau. 1 - n, n - 1, 1 - 1, n - n
 CSDL quan hệ
 - Học 1 số dạng truy vấn cơ bản: SELECT, INSERT, UPDATE,
 DELETE
+- Có 2 hình thức để có thể tương tác đc với CSDL sử dụng
+SQL:
++ Command line
++ UI: ưu tiên beginner: PHPMyadmin, MySQL Workbench,
+Navicat ....
+XAMPP cài sẵn PHPMyadmin, mặc định cần tài khoản để
+truy cập vào CSDL, XAMPP tạo ra username=root, password
+để trống và auto đăng nhập vào PHPMyadmin
+http://localhost/phpmyadmin/
+
+5 / Câu truy vấn SQL cơ bản: CSDL MySQL ko phân biệt
+hoa thường khi viết truy vấn
+# 1 - Tạo CSDL
+# CREATE DATABASE php0423e_test;
+CREATE DATABASE IF NOT EXISTS php0423e_demo
+CHARACTER SET utf8 # lưu ký tự có dấu
+COLLATE utf8_general_ci; #case insensitive
+# 2 - Sử dụng CSDL: chỉ có tác dụng trong command line
+USE php0423e_demo;
+# 3 - Xóa CSDL:
+DROP DATABASE abc;
