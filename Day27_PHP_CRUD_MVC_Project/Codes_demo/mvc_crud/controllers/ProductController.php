@@ -48,4 +48,48 @@ class ProductController extends Controller {
 		// + Gọi layout để hiển thị các giá trị trên
 		require_once 'views/layouts/main.php';
 	}
+
+	//index.php?controller=product&action=index
+	public function index() {
+		// - Controller gọi Model
+		$product_model = new Product();
+		$products = $product_model->getList();
+//		echo '<pre>';
+//		print_r($products);
+//		echo '</pre>';
+		// - Controller gọi View
+		$this->page_title = 'Trang ds sản phẩm';
+		$this->content =
+		$this->render('views/products/index.php', [
+			'products' => $products,
+//			'abc' => 123
+		]);
+		require_once 'views/layouts/main.php';
+	}
+
+	//index.php?controller=product&action=update&id=...
+	public function update() {
+
+	}
+	//index.php?controller=product&action=delete&id=...
+	public function delete() {
+		// - Validate id
+		if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+			$_SESSION['error'] = 'Tham số id ko hợp lệ';
+			header('Location:index.php?controller=product&action=index');
+			exit();
+		}
+		$id = $_GET['id'];
+		// - Controller gọi Model
+		$product_model = new Product();
+		$is_delete = $product_model->deleteData($id);
+		var_dump($is_delete);
+		if ($is_delete) {
+			$_SESSION['success'] = 'Xóa thành công';
+		} else {
+			$_SESSION['error'] = 'Xóa thất bại';
+		}
+		header('Location:index.php?controller=product&action=index');
+		exit();
+	}
 }
