@@ -2,7 +2,21 @@
 
 class Controller
 {
-    //chứa nội dung view
+	public function __construct() {
+		// Nếu chưa login thì ko cho truy cập vào các trang
+		//quản trị và ko phải là chức năng login hoặc register
+		// thì ko cho truy cập
+		if (!isset($_SESSION['user'])
+			&& $_GET['controller'] != 'user'
+			&& !in_array($_GET['action'], ['register', 'login'])
+		) {
+			$_SESSION['error'] = 'Bạn chưa login, ko thể truy cập';
+			header('Location: index.php?controller=user&action=login');
+			exit();
+		}
+	}
+
+	//chứa nội dung view
     public $content;
     //chứa nội dung lỗi validate
     public $error;

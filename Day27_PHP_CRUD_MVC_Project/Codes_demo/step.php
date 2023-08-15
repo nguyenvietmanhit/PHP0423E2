@@ -133,6 +133,6 @@ PHP7 -> ckfinder_php.7.x
 + PHP8 yêu cầu cấu hình thì mới dùng đc CKFinder, cần
 cho phép thư viện GD bật lên thì mới dùng đc
 XAMPP -> Apache -> Config -> php.ini, search(Ctrl F): gd
-, bỏ dấu ; trước extension=gd r lưu file
+, bỏ dấu ; <tr></tr>ước extension=gd r lưu file
 Cần restart Apache để nhận cấu hình -> Stop r Start lại
 -> test lại
