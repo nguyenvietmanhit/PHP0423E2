@@ -15,3 +15,41 @@ UserController.php, phương thức register
 Dùng session lưu lại phiên đăng nhập
 Xử lý 1 số case: chưa login thì ko truy cập đc admin, login
 r thì ko truy cập lại đc trang login ...
+
+Day30/project_demo/backend/index.php
+Thêm 1 vài danh mục, sau đó thêm 1 vài sản phẩm
+có ảnh
+
+- sửa trường name = title trong bảng products của CSDL
+php0423e2_project
+
+- Chạy frontend:
+Day30/project_demo/frontend/index.php
+
+- Chức năng giỏ hàng:
++ Lưu giỏ hàng bằng gì ? CSDL, File, Session, Cookie ...
+Ưu tiên lưu bằng session vì giỏ hàng lưu tạm thời sản phẩm
++ Cấu trúc của session giỏ hàng:
+$_SESSION['cart'] = [
+    3 => [
+        'name' => 'Iphone X',
+        'avatar' => 'ip.jpg',
+        'price' => 123,
+        'quantity' => 4
+    ]
+]
++ Áp dụng kỹ thuật Ajax - Asynchronous Javascript and XML
+cho chức năng Thêm sản phẩm vào giỏ để tạo hiệu ứng ko cần
+tải lại trang mỗi thêm thêm sp vào giỏ
+
+- Kỹ năng Rewrite URL
+Tạo ra các url thân thiện với user
+URL MVC:
+index.php?controller=cart&action=index
+-> gio-hang-cua-ban.html
+Cần sử dụng Rewrite để viết lại URL, sử dụng file .htaccess
+để xử lý
+
+- Upload code lên server:
+Tham khảo file
+Slides/Huong_dan_day_code_server_itplus_PHP0423E2.docx
