@@ -61,3 +61,6 @@ http://localhost -> http://127.0.0.1
 - Thanh toán trực tuyến với VNPAY
 Tham khảo file Slides/C:\xampp\htdocs\PHP0423E2\Day31_PHP_Hosting_Payment_Online_Mail\Slides
 \Huong_dan_tich_hop_VNPay_thanh_toan_online.docx
+
+- Gửi mail:
+
