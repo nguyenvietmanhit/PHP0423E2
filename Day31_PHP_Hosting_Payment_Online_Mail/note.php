@@ -52,4 +52,12 @@ Cần sử dụng Rewrite để viết lại URL, sử dụng file .htaccess
 
 - Upload code lên server:
 Tham khảo file
-Slides/Huong_dan_day_code_server_itplus_PHP0423E2.docx
+Slides
+/Huong_dan_day_code_server_itplus_PHP0423E2.docx
++ Domain: vnxpress.net, dantri.com.vn hoặc IP: 3.33.152.147
+http://localhost -> http://127.0.0.1
++ Nơi lưu trữ source code Web: Hosting/VPS/Cloud
+
+- Thanh toán trực tuyến với VNPAY
+Tham khảo file Slides/C:\xampp\htdocs\PHP0423E2\Day31_PHP_Hosting_Payment_Online_Mail\Slides
+\Huong_dan_tich_hop_VNPay_thanh_toan_online.docx
