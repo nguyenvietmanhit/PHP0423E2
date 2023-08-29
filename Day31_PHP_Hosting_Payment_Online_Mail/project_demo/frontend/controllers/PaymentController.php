@@ -6,7 +6,6 @@ require_once 'helpers/Helper.php';
 
 class PaymentController extends Controller
 {
-	
 	public function online() {
 		if (isset($_POST['submit'])) {
 			require_once 'libraries/vnpay_php/vnpay_create_payment.php';
