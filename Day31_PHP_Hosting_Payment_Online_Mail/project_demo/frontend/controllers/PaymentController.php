@@ -6,19 +6,6 @@ require_once 'helpers/Helper.php';
 
 class PaymentController extends Controller
 {
-	public function index() {
-
-		if (isset($_POST['submit'])) {
-			$method = $_POST['method'];
-			if ($method == 0) {
-				header('Location: index.php?controller=payment&action=online');
-				exit();
-			}
-		}
-		
-		$this->content = $this->render('views/payments/index.php');
-		require_once 'views/layouts/main.php';
-	}
 	
 	public function online() {
 		if (isset($_POST['submit'])) {
