@@ -22,7 +22,7 @@ class ProductController extends Controller
     }
     $arr_params = [
         'total' => $count_total,
-        'limit' => 1,
+        'limit' => 5,
         'query_string' => 'page',
         'controller' => 'product',
         'action' => 'index',

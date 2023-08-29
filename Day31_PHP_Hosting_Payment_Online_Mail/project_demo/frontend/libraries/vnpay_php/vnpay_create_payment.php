@@ -4,11 +4,11 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 /**
- * 
+ *
  *
  * @author CTT VNPAY
  */
-require_once("./config.php");
+require_once("config.php");
 
 $vnp_TxnRef = rand(1,10000); //Mã giao dịch thanh toán tham chiếu của merchant
 $vnp_Amount = $_POST['amount']; // Số tiền thanh toán
@@ -52,7 +52,7 @@ foreach ($inputData as $key => $value) {
 
 $vnp_Url = $vnp_Url . "?" . $query;
 if (isset($vnp_HashSecret)) {
-    $vnpSecureHash =   hash_hmac('sha512', $hashdata, $vnp_HashSecret);//  
+    $vnpSecureHash =   hash_hmac('sha512', $hashdata, $vnp_HashSecret);//
     $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
 }
 header('Location: ' . $vnp_Url);

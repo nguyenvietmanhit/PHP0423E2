@@ -21,9 +21,9 @@ class Helper
     const STATUS_ACTIVE_TEXT = 'Active';
     const STATUS_DISABLED_TEXT = 'Disabled';
     // Tài khoản Gmail
-    const MAIL_USERNAME = '';
+    const MAIL_USERNAME = 'nguyenvietmanhit@gmail.com';
     //Mật khẩu ứng dụng
-    const MAIL_PASSWORD = '';
+    const MAIL_APP_PASSWORD = 'hzohtwfumyqimprc';
 
     /**
      * Gửi mail sử dụng thư viện PHPMailer
@@ -54,7 +54,7 @@ class Helper
             $mail->Host = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth = true;                                   //Enable SMTP authentication
             $mail->Username = self::MAIL_USERNAME;                     //SMTP username
-            $mail->Password = self::MAIL_PASSWORD;                               //SMTP password
+            $mail->Password = self::MAIL_APP_PASSWORD;                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
             //https://myaccount.google.com/
@@ -77,6 +77,7 @@ class Helper
 //    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
+            return true;
 //            echo 'Message has been sent';
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
