@@ -21,9 +21,9 @@ class Helper
     const STATUS_ACTIVE_TEXT = 'Active';
     const STATUS_DISABLED_TEXT = 'Disabled';
     // Tài khoản Gmail
-    const MAIL_USERNAME = 'nguyenvietmanhit@gmail.com';
+    const MAIL_USERNAME = '';
     //Mật khẩu ứng dụng
-    const MAIL_APP_PASSWORD = 'hzohtwfumyqimprc';
+    const MAIL_APP_PASSWORD = '';
 
     /**
      * Gửi mail sử dụng thư viện PHPMailer
