@@ -23,4 +23,15 @@ class Order extends Model {
 //    return $obj_insert->execute($arr_insert);
 	}
 	
+	public function updatePaymentStatus($id) {
+		$sql_update = "UPDATE orders SET payment_status=:payment_status WHERE id=:id";
+
+		$obj_update = $this->connection->prepare($sql_update);
+		$updates = [
+			':payment_status' => 1, // 1 = Đã thanh toán
+			':id' => $id
+		];
+		return $obj_update->execute($updates);
+	}
+	
 }
