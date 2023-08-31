@@ -5,7 +5,7 @@ class Order extends Model {
 	public function insertOrder($fullname, $address, $mobile, $email, $note, $price_total, $payment_status) {
 		$sql_insert = "INSERT INTO orders(fullname, address, mobile, email, note, price_total, payment_status)
     VALUES (:fullname, :address, :mobile, :email, :note, :price_total, :payment_status)";
-		$obj_insert = $connection->prepare($sql_insert);
+		$obj_insert = $this->connection->prepare($sql_insert);
 		$arr_insert = [
 			':fullname' => $fullname,
 			':address' => $address,
